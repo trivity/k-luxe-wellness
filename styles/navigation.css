@@ -29,20 +29,21 @@
 
 /* Logo */
 .navbar-logo {
-  font-family: var(--font-serif);
-  font-size: 1.75rem;
-  font-weight: 400;
-  color: var(--color-white);
-  letter-spacing: 0.1em;
-  transition: color var(--transition-medium);
+  display: flex;
+  align-items: center;
+  transition: all var(--transition-medium);
 }
 
-.navbar.scrolled .navbar-logo {
-  color: var(--color-charcoal);
+.navbar-logo-img {
+  height: 55px;
+  width: auto;
+  transition: all var(--transition-medium);
+  filter: brightness(0) invert(1);
 }
 
-.navbar-logo span {
-  color: var(--color-gold);
+.navbar.scrolled .navbar-logo-img {
+  height: 45px;
+  filter: none;
 }
 
 /* Navigation Links */
