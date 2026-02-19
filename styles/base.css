@@ -2,30 +2,30 @@
 
 :root {
   /* Primary Brand Colors */
-  --color-gold: #8B7355;
-  --color-gold-light: #A08060;
-  --color-gold-dark: #6B5344;
-  
+  --color-gold: #674C47;
+  --color-gold-light: #7A5D57;
+  --color-gold-dark: #553D39;
+
   /* Background Colors */
   --color-pink: #F8E8E8;
   --color-pink-light: #FDF5F5;
   --color-cream: #FAF8F5;
   --color-white: #FFFFFF;
-  
+
   /* Accent Colors */
   --color-blush: #E8D5D5;
   --color-rose: #D4A5A5;
-  
+
   /* Text Colors */
   --color-charcoal: #2C2C2C;
   --color-black: #1A1A1A;
   --color-gray: #666666;
   --color-gray-light: #999999;
-  
+
   /* Typography */
   --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
   --font-sans: 'Montserrat', 'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
-  
+
   /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -33,7 +33,7 @@
   --spacing-lg: 4rem;
   --spacing-xl: 6rem;
   --spacing-xxl: 8rem;
-  
+
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-medium: 0.3s ease;
@@ -41,7 +41,9 @@
 }
 
 /* Reset & Base Styles */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -61,7 +63,12 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
   font-weight: 400;
   line-height: 1.2;
@@ -138,7 +145,7 @@ a:hover {
   background-color: var(--color-gold-dark);
   color: var(--color-white);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(201, 169, 98, 0.3);
+  box-shadow: 0 4px 12px rgba(103, 76, 71, 0.3);
 }
 
 .btn-secondary {
@@ -355,16 +362,16 @@ button:focus-visible {
     --spacing-xl: 4rem;
     --spacing-xxl: 5rem;
   }
-  
+
   .container {
     padding: 0 var(--spacing-sm);
   }
-  
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
   }
-  
+
   .footer-bottom {
     flex-direction: column;
     gap: var(--spacing-sm);
