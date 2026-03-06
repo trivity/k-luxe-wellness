@@ -2,7 +2,7 @@
 
 .about-hero {
   background: linear-gradient(135deg, rgba(44, 44, 44, 0.3) 0%, rgba(44, 44, 44, 0.1) 100%),
-              url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1920') center/cover;
+              url('https://images.unsplash.com/photo-1674702727317-d29b2788dc4a?w=1920') center/cover;
   height: 60vh;
   min-height: 500px;
   display: flex;
