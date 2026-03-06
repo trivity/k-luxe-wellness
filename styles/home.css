@@ -367,7 +367,7 @@
 /* CTA Section */
 .cta-section {
   background: linear-gradient(135deg, rgba(44, 44, 44, 0.7) 0%, rgba(44, 44, 44, 0.5) 100%),
-    url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1920') center/cover fixed;
+    url('https://images.unsplash.com/photo-1483794344563-d27a8d18014e?w=1920') center/cover fixed;
   background-attachment: fixed;
   text-align: center;
   color: var(--color-white);
