@@ -80,6 +80,7 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: var(--spacing-xs);
+  gap: 1rem;
 }
 
 .service-header h3 {
@@ -93,6 +94,8 @@
   font-family: var(--font-sans);
   font-size: 0.8rem;
   color: var(--color-gold);
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .service-meta span {
