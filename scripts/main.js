@@ -171,5 +171,3 @@ function initTestimonialCarousel() {
   // Auto-advance
   setInterval(nextSlide, 6000);
 }
-
-}
