@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
   initScrollEffects();
   initBeforeAfterSlider();
   initTestimonialCarousel();
-  initPopups();
 });
 
 /**
@@ -173,68 +172,4 @@ function initTestimonialCarousel() {
   setInterval(nextSlide, 6000);
 }
 
-/**
- * Pop-up Modals
- */
-function initPopups() {
-  // Monthly Promo Pop-up
-  const promoModal = document.getElementById('promo-modal');
-  const promoClose = document.querySelector('.promo-close');
-  
-  if (promoModal && !sessionStorage.getItem('promoSeen')) {
-    setTimeout(() => {
-      promoModal.classList.add('active');
-      sessionStorage.setItem('promoSeen', 'true');
-    }, 5000);
-  }
-  
-  if (promoClose) {
-    promoClose.addEventListener('click', () => {
-      promoModal.classList.remove('active');
-    });
-  }
-  
-  // Close on backdrop click
-  if (promoModal) {
-    promoModal.addEventListener('click', (e) => {
-      if (e.target === promoModal) {
-        promoModal.classList.remove('active');
-      }
-    });
-  }
-  
-  // Newsletter Slide-in
-  const newsletterSlide = document.getElementById('newsletter-slide');
-  let newsletterShown = false;
-  
-  // Show on scroll (70% down page)
-  const showNewsletterOnScroll = () => {
-    if (newsletterShown || !newsletterSlide) return;
-    
-    const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-    if (scrollPercent > 70) {
-      newsletterSlide.classList.add('active');
-      newsletterShown = true;
-    }
-  };
-  
-  window.addEventListener('scroll', showNewsletterOnScroll);
-  
-  // Close newsletter
-  const newsletterClose = document.querySelector('.newsletter-close');
-  if (newsletterClose) {
-    newsletterClose.addEventListener('click', () => {
-      newsletterSlide.classList.remove('active');
-    });
-  }
-  
-  // Form submissions
-  document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // Placeholder for form handling
-      alert('Thank you for your submission! We will be in touch soon.');
-      form.reset();
-    });
-  });
 }
