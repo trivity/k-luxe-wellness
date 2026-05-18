@@ -1,0 +1,372 @@
+/* K | Luxe Wellness - Tox Party Page Styles */
+
+/* Hero Section */
+.tox-hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-pink-light) 0%, var(--color-cream) 50%, var(--color-blush) 100%);
+  padding: var(--spacing-xxl) var(--spacing-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.tox-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(103, 76, 71, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: floatOrb 8s ease-in-out infinite;
+}
+
+.tox-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212, 165, 165, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: floatOrb 10s ease-in-out infinite reverse;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -20px); }
+}
+
+.tox-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.tox-hero-content .section-subtitle {
+  margin-bottom: var(--spacing-md);
+  display: block;
+}
+
+.tox-hero-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-charcoal);
+  line-height: 1.1;
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: 0.02em;
+}
+
+.tox-hero-title span {
+  display: block;
+  font-size: 0.5em;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-top: var(--spacing-xs);
+}
+
+.tox-hero-divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+  margin: var(--spacing-md) auto;
+}
+
+/* Intro Section */
+.tox-intro {
+  background-color: var(--color-white);
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+  position: relative;
+}
+
+.tox-intro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-blush), transparent);
+}
+
+.tox-intro-text {
+  max-width: 750px;
+  margin: 0 auto;
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+  color: var(--color-charcoal);
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* How It Works Section */
+.tox-how-it-works {
+  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-pink-light) 100%);
+  padding: var(--spacing-xxl) 0;
+  position: relative;
+}
+
+.tox-section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.tox-section-header h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Steps Grid */
+.tox-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tox-step {
+  text-align: center;
+  padding: var(--spacing-md) var(--spacing-sm);
+  position: relative;
+}
+
+.tox-step-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.tox-step-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--color-gold);
+  transform: rotate(45deg);
+  transition: all var(--transition-medium);
+}
+
+.tox-step:hover .tox-step-icon::before {
+  background-color: rgba(103, 76, 71, 0.05);
+  transform: rotate(45deg) scale(1.1);
+}
+
+.tox-step-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--color-gold);
+  fill: none;
+  stroke-width: 1.5;
+  position: relative;
+  z-index: 1;
+}
+
+.tox-step-number {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: var(--color-gold);
+  letter-spacing: 0.15em;
+  margin-bottom: var(--spacing-xs);
+  display: block;
+}
+
+.tox-step h3 {
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-charcoal);
+  line-height: 1.4;
+}
+
+.tox-step p {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  line-height: 1.7;
+}
+
+/* Connector lines between steps */
+.tox-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 35px;
+  right: -15%;
+  width: 30%;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-gold), rgba(103, 76, 71, 0.2));
+}
+
+/* Image Section */
+.tox-image-section {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-white);
+}
+
+.tox-image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.tox-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.tox-image-wrapper img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.tox-image-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+.tox-image-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: -20px;
+  bottom: -20px;
+  border: 1px solid var(--color-charcoal);
+  z-index: -1;
+}
+
+.tox-image-text {
+  padding: var(--spacing-md);
+}
+
+.tox-image-text h2 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.tox-image-text p {
+  color: var(--color-gray);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+}
+
+.tox-highlight-list {
+  list-style: none;
+  margin-bottom: var(--spacing-md);
+}
+
+.tox-highlight-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.95rem;
+  color: var(--color-charcoal);
+  line-height: 1.6;
+}
+
+.tox-highlight-list li::before {
+  content: '✦';
+  color: var(--color-gold);
+  font-size: 0.7rem;
+  margin-top: 0.35rem;
+  flex-shrink: 0;
+}
+
+/* CTA Section */
+.tox-cta {
+  background-color: var(--color-gold);
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+}
+
+.tox-cta h2 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+}
+
+.tox-cta p {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto var(--spacing-md);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.tox-cta .btn-secondary {
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.tox-cta .btn-secondary:hover {
+  background-color: var(--color-white);
+  color: var(--color-gold);
+}
+
+/* Fine Print */
+.tox-fine-print {
+  background-color: var(--color-cream);
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+}
+
+.tox-fine-print p {
+  font-size: 0.85rem;
+  color: var(--color-gray-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .tox-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .tox-step:not(:last-child)::after {
+    display: none;
+  }
+
+  .tox-image-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .tox-hero {
+    min-height: 50vh;
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .tox-steps-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    max-width: 400px;
+  }
+
+  .tox-image-wrapper img {
+    height: 350px;
+  }
+
+  .tox-image-wrapper::after {
+    display: none;
+  }
+}
