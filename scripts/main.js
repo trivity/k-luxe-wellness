@@ -5,6 +5,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize all components
   initNavigation();
+  initBookingLinks();
   initScrollEffects();
   initBeforeAfterSlider();
   initTestimonialCarousel();
@@ -46,6 +47,25 @@ function initNavigation() {
     } else {
       navbar.classList.remove('scrolled');
     }
+  });
+}
+
+/**
+ * Open online booking links in a new tab
+ */
+function initBookingLinks() {
+  document.querySelectorAll('a[href*="patientnow.com"]').forEach((link) => {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+
+    link.addEventListener('click', (event) => {
+      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.button === 1) {
+        return;
+      }
+
+      event.preventDefault();
+      window.open(link.href, '_blank', 'noopener,noreferrer');
+    });
   });
 }
 
